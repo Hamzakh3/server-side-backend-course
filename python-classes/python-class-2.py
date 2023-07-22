@@ -117,14 +117,14 @@ print(f"y is, {y}")
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Chapter Input
 
-# String Methods
+# Lesson 12 String Methods
 # string = "My name is Hamza"
 # print(string.format())
 # print(string.lower())
 # print(string.upper())
 # print(string.capitalize())
 
-# Buitin FUnction for Strings
+# Lesson 13 Builtin Function for Strings
 # print(len(string))
 # print(type(string))
 # print(round(2.5454545))
@@ -133,7 +133,7 @@ print(f"y is, {y}")
 
 
 # Airthmatic Operators
-# + | - | * | /
+# + | - | * | / | //
 
 
 
