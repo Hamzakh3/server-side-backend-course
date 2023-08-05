@@ -1,23 +1,23 @@
 # Lesson 24 | Dictionary
 # How to create Dictionary
-""" 
+
 user = {
     "name": "Hamza",
     "age": 26,
     "gender": "male"
 }
- """
+
 
 # How to get specific value from dictionary
-""" 
+
 print(user["name"])
 print(user["age"])
-print(user.get("name")) #if key exist return key value otherwise return null
-print(user.get("name", "null")) #if key exist return key value otherwise return default value (second parameter is default value)
- """
+# print(user.get("name")) #if key exist return key value otherwise return null
+# print(user.get("name", "null")) #if key exist return key value otherwise return default value (second parameter is default value)
+
 
 # Nestes Dictionary
-""" 
+
 user = {
     "name": "Hamza",
     "age": 26,
@@ -26,49 +26,49 @@ user = {
         "city": "Karachi"
     }
 }
- """
+
 
 # How to add new values in dictionary
-""" 
+
 user["phoneNumber"] = "03202313219"
 user["address"]["country"] = "Pakistan"
 print(user)
- """
+
 
 # How to get root length of keys
-""" 
+
 userKeyLength = len(user)
 print(userKeyLength)
- """
+
 
 # How to update dictionary values
-""" 
+
 user["name"] = "Muhammad Hamza"
 user["address"]["country"] = "Saudia"
 user["address"]["city"] = "Madina"
-user.update({address: {city: "Madina"}}) # if key exisst update value otherwise add new key in dictionary
-user.update({address: {country: "Saudia"}}) 
+# user.update({"address": {"city": "Madina"}}) # if key exisst update value otherwise add new key in dictionary
+# user.update({"address": {"country": "Saudia"}}) 
 print(user)
- """
+
 
 # How to Delete values from dictionary
-""" 
+
 del user["phoneNumber"]
 print(user)
- """
+
 
 # How to clear dictionay
-""" 
+
 oldUserData = user.copy() #When a dictionary is copied through the copy() method, any change made in a new dictionary will not be reflected in the original dictionary.
 # oldUserData = user #When a = operator is used to copy a dictionary, any change in the copied one will be reflected in the original dictionary.
 user.clear()
 # user = {}
 print(user) 
 print(oldUserData)
- """
+
 
 # How to get all keys of dictionary
-""" 
+
 user = {
     "name": "Hamza",
     "age": 26,
@@ -78,16 +78,16 @@ user = {
     }
 }
 print(user)
- """
+
 
 # How to get all keys of dictionary
-# print(user.keys())
+print(user.keys())
 
 # How to get all values of dictionary
-# print(user.values())
+print(user.values())
 
 # How to merge two dictionary
-""" 
+
 d1 = {
     "a": 1,
     "b": 2,
@@ -102,7 +102,7 @@ d2 = {
 
 d3 = {**d1, **d2}
 print(d3)
- """
+
 
 
 #  Dictionary Class Assignment
