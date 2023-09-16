@@ -1,168 +1,83 @@
-# topic OOP
+""" 
+# SLICE
+# x[:::] | start | end | Jump
+x = "helloworld"
+list = [0, 1,2,3,4,5,6,7,8,9]
 
-## explaination
-# class keyword
-# class name is PascalCase
-# dynamic attributes (not shared between objects)
-# instance attributes (not shared between objects)
-# class level attributes (shared between objects)
-# class initialization
-# constructor/desctructor
-# instanace method
-# self keyword
+print(list[2:5])
+print(list[7:])
+print(list[1::3])
 
-# creating class without attributes
-class MyClass():
-    pass
+# SPLIT | string to list
+sentence = "This is a sample sentence"
+csv_data = "car,bike,plane,truck,scooter"
+date_str = "2023-09-01"
+multiline_txt = ""Line 1
+Line 2
+Line 4
+""
+url = "https://www.google.com/path/method"
 
-# adding dynamic attributes in the above class
-obj = MyClass()
-obj.fname = "muhammad"
-obj.lname = "danish"
+print(sentence.split(" "))
+print(csv_data.split(","))
+print(date_str.split("-"))
+print(multiline_txt.split("\n"))
+
+# JOIN | Convert list to string
+words = ['this', 'is', 'a', 'sample', 'sentence']
+sentence = " ".join(words)
+print(sentence)
+
+name = ['Alice', 'Bob', 'Charlie']
+date = ['2023', '09', '01']
+numbers = [100,102,103,104]
+
+print(" ".join(name))
+print("-".join(date))
+# print(list[map(str, numbers)])
+
+# TUPPLE | not perform mutation
+
+l = [1,2,3,4]
+t = (1,2,3,4)
+
+lt = type(l)
+tt = type(t)
+
+lt.append(6)
+# tt.append(6)
+
+# Convert list to tupple
+tupple_list = tuple(l)
+
 print(
-    obj.__dict__
+    id(tupple_list)
 )
+ """
 
-# creating class with attributes
-class MyClass():
-    def __init__(self, fname, lname):
-        self.first_name = fname
-        self.last_name = lname
+# SET | Remove Duplicate | Mutable data tpe
 
-obj = MyClass("muhammad", "danish")
-print(
-    obj.__dict__
-)
+s = {1, 2, 3, 4}
+s.add(5)
 
-# create method in class
-class MyClass():
-    def __init__(self, fname, lname):
-        self.first_name = fname
-        self.last_name = lname
-
-    def get_fullname(self):
-        return self.first_name +" "+ self.last_name
-
-obj = MyClass("muhammad", "danish")
-print(
-    obj.get_fullname()
-)
-
-# create 2 objects on the same class
-class MyClass():
-    def __init__(self, fname, lname):
-        self.first_name = fname
-        self.last_name = lname
-
-    def get_fullname(self):
-        return self.first_name + " " + self.last_name
-
-
-obj_1 = MyClass("muhammad", "danish")
-print(
-    obj_1.get_fullname()
-)
-obj_2 = MyClass("fahad", "soomro")
-print(
-    obj_2.get_fullname()
-)
-
-# create 2 objects on the same class and see if adding new dynamic attribute in one object visible on other
-class MyClass():
-    def __init__(self, fname, lname):
-        self.first_name = fname
-        self.last_name = lname
-
-    def get_fullname(self):
-        return self.first_name + " " + self.last_name
-
-
-obj_1 = MyClass("muhammad", "danish")
-obj_1.salary = 2000 # dynamic attribute
-print(
-    obj_1.__dict__
-)
-obj_2 = MyClass("fahad", "soomro")
-print(
-    obj_2.__dict__
-)
+# s.discard()
+# s.remove()
+# s.update()
+# s.union()
+# s.intersection()
+# s.difference()
 
 
 
-# class level attributes (shared)
-class MyClass():
-    counter = 0 # this is the class level attributes (shared amonth the objects)
-    def __init__(self, fname, lname):
-        self.first_name = fname
-        self.last_name = lname
+set_A = {1,2,3,4,5}
+set_B = {4,5,6,7,8}
 
-    def get_fullname(self):
-        return self.first_name + " " + self.last_name
-
-
-# accessing class level attributes
-# remember, to access class level attributes you don't need to create instance
-print(
-    MyClass.counter
-)
-
-
-# Modifying Class level attributes
-class MyClass():
-    # this is the class level attributes (shared amonth the objects)
-    counter = 0
-
-    def __init__(self, fname, lname):
-        self.first_name = fname
-        self.last_name = lname
-
-    def get_fullname(self):
-        return self.first_name + " " + self.last_name
-
-obj_1 = MyClass("muhammad", "danish")
-print(
-    obj_1.counter # it should display 0
-)
-MyClass.counter = 100
-print(
-    obj_1.counter  # it should display 100
-)
-
-
-# Modifying Class level attributes in instance
-class MyClass():
-    # this is the class level attributes (shared amonth the objects)
-    counter = 0
-
-    def __init__(self, fname, lname):
-        self.first_name = fname
-        self.last_name = lname
-
-    def get_fullname(self):
-        return self.first_name + " " + self.last_name
-
-
-obj_1 = MyClass("muhammad", "danish")
-print(
-    obj_1.counter  # it should display 0
-)
-obj_1.counter = 300 # changing class level attribute in instance
-print(
-    obj_1.counter  # it should display 300
-)
-
-obj_2 = MyClass("fahad", "soomro")
-print(
-    obj_2.counter  # it should display 0, above instance changes didn't reflect here
-)
-
-
-# challenge
-class MyClass():
-    # this is the class level attributes (shared amonth the objects)
-    employee_count = 0
-
-    def __init__(self, fname, lname):
-        self.first_name = fname
-        self.last_name = lname
-        self.employee_count += 1
+print(set_A.union(set_B))
+print(set_A.intersection(set_B))
+print(set_A.difference(set_B))
+set_A.add(10)
+set_B.add(10)
+print(set_A)
+print(set_B)
+set_C = {3}
+print(set_A.union(set_C))

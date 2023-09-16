@@ -68,6 +68,15 @@ print(lettersCount)
 # increment the counter inside while loop
 # divide x by 10 using floor division syntax "//"
 
+x = 278334
+counter = 0
+
+while x != 0:
+    x = x // 10
+    counter += 1
+    print(x, counter)
+    
+
 
 # Write a program that takes user input and display it. The program keep ask user the input until user enters “0”
 """ 
